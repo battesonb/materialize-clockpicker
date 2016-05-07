@@ -140,7 +140,7 @@
 
 		// Allow it to have a container other than the input, say body for example
 		if (options.container) {
-			this.container = $(options.container);
+			$(options.container) == null ? this.container = input : this.container = $(options.container);
 		} else {
 			this.container = input;
 		}

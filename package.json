@@ -5,7 +5,7 @@
   "main": "dist/js/materialize.clockpicker.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:chingyawhao/materialize-clockpicker.git"
+    "url": "https://github.com/battesonb/materialize-clockpicker.git"
   },
   "files": [
   	"dist"
@@ -15,15 +15,13 @@
     "materialize",
     "clockpicker"
   ],
-  "author": "chingyawhao",
+  "author": "battesonb",
   "contributors": [
-    "victor-perez <vpjs@victor-perez.nl> (https://github.com/victor-perez)"
+    "victor-perez <vpjs@victor-perez.nl> (https://github.com/victor-perez)",
+    "chingyawhao (https://github.com/chingyawhao)"
   ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chingyawhao/materialize-clockpicker/issues"
-  },
-  "homepage": "https://github.com/chingyawhao/materialize-clockpicker",
+  "homepage": "https://github.com/battesonb/materialize-clockpicker",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
