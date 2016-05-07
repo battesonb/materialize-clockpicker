@@ -138,6 +138,13 @@
 		this.footer = popover.find('.picker__footer');
 		this.amOrPm = "PM";
 
+		// Allow it to have a container other than the input, say body for example
+		if (options.container) {
+			this.container = $(options.container);
+		} else {
+			this.container = input;
+		}
+
 		// Setup for for 12 hour clock if option is selected
 		if (options.twelvehour) {
 			var  amPmButtonsTemplate = [
@@ -417,7 +424,7 @@
 		$(document.body).css('overflow', 'hidden');
 		if (!this.isAppended) {
 			// Append popover to body
-			this.popover.insertAfter(this.input);
+			this.popover.insertAfter(this.container);
 			if(this.options.twelvehour) {
 				this.amOrPm = 'PM';
 				if(!this.options.ampmclickable) {
@@ -683,18 +690,19 @@
 	};
 
 	// Extends $.fn.clockpicker
-	$.fn.pickatime = function(option){
+	$.fn.clockpicker = function(option){
 		var args = Array.prototype.slice.call(arguments, 1);
 		return this.each(function(){
 			var $this = $(this),
-					data = $this.data('clockpicker');
-			if (!data) {
+				data = $this.data('clockpicker');
+			if (! data) {
 				var options = $.extend({}, ClockPicker.DEFAULTS, $this.data(), typeof option == 'object' && option);
 				$this.data('clockpicker', new ClockPicker($this, options));
 			} else {
-				// Manual operatsions. show, hide, remove, e.g.
-				if (typeof data[option] === 'function')
+				// Manual operations. show, hide, remove, e.g.
+				if (typeof data[option] === 'function') {
 					data[option].apply(data, args);
+				}
 			}
 		});
 	};
